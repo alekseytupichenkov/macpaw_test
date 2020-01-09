@@ -1,0 +1,19 @@
+App\Domain\Model\Hangar:
+    type: entity
+    table: hangar
+    repositoryClass: App\Repository\HangarRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        lands:
+            type: array
+    oneToMany:
+        airplanes:
+            targetEntity: Airplane
+            mappedBy: hangar

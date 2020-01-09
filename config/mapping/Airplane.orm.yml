@@ -1,0 +1,27 @@
+App\Domain\Model\Airplane:
+    type: entity
+    table: airplane
+    repositoryClass: App\Repository\AirplaneRepository
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        model:
+            type: string
+            length: 255
+        title:
+            type: string
+            length: 255
+        status:
+            type: string
+            length: 255
+    manyToOne:
+        hangar:
+            targetEntity: Hangar
+            joinColumn:
+                name: hangar_id
+                joinColumns:
+                    hangar_id:
+                        referencedColumnName: id

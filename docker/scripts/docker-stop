@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+. "$(dirname $0)/include/variables"
+
+cd $(dirname $0)/../../ \
+    && docker-compose -f docker/docker-compose.yml -p $CONTAINERS_PREFIX kill \
+    && yes | docker-compose -f docker/docker-compose.yml -p $CONTAINERS_PREFIX rm > /dev/null

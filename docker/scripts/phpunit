@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+. "$(dirname $0)/include/base"
+
+$(dirname $0)/console --env=test doctrine:database:drop --force --if-exists --no-interaction
+$(dirname $0)/console --env=test doctrine:database:create --if-not-exists --no-interaction
+$(dirname $0)/console --env=test doctrine:migrations:migrate --no-interaction
+
+# docker/scripts/phpunit tests
+docker exec -u code -i$TTY $PHP_CONTAINER bash -c "./bin/phpunit $*"

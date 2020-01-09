@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+. "$(dirname $0)/include/variables"
+
+$(dirname $0)/docker-stop && \
+    cd $(dirname $0)/../../ \
+    && docker-compose -f docker/docker-compose.yml -p $CONTAINERS_PREFIX build \
+    && docker-compose -f docker/docker-compose.yml -p $CONTAINERS_PREFIX up -d; \
+    cd ->/dev/null

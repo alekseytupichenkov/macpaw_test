@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+. "$(dirname $0)/include/base"
+
+docker exec -u code -it $PHP_CONTAINER bash

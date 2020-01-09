@@ -1,0 +1,15 @@
+App\Domain\Model\Hangar:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+      type: integer
+      groups: [hangar_view, hangar_detail]
+    title:
+      expose: true
+      type: string
+      groups: [hangar_view, hangar_detail]
+    lands:
+      expose: true
+      type: array<string>
+      groups: [hangar_view, hangar_detail]

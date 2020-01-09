@@ -1,0 +1,23 @@
+App\Domain\Model\Airplane:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+      type: integer
+      groups: [airplane_view, airplane_detail]
+    model:
+      expose: true
+      type: string
+      groups: [airplane_view, airplane_detail]
+    title:
+      expose: true
+      type: string
+      groups: [airplane_view, airplane_detail]
+    status:
+      expose: true
+      type: string
+      groups: [airplane_view, airplane_detail]
+    hangar:
+      expose: true
+      type: App\Domain\Model\Hangar
+      groups: [airplane_detail]

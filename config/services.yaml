@@ -25,3 +25,12 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    _instanceof:
+        App\Domain\Airplane\AirplaneModelInterface:
+            tags: ['airplane_model_tag']
+
+    App\Domain\Airplane\Collections\AirplaneModelCollection:
+        arguments:
+            - !tagged_iterator airplane_model_tag
+

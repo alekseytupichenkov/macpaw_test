@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+. "$(dirname $0)/include/base"
+
+docker exec -u code -i$TTY $PHP_CONTAINER bash -c "./vendor/bin/php-cs-fixer --no-interaction --dry-run --diff -v fix $*"
