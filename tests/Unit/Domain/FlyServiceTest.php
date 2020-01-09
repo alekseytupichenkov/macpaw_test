@@ -92,7 +92,6 @@ class FlyServiceTest extends TestCase
         $this->assertEquals(null, $airplane->getHangar());
     }
 
-
     /**
      * @test
      */

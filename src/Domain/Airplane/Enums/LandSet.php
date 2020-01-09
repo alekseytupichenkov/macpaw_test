@@ -13,7 +13,6 @@ class LandSet extends EnumSet
 
     /**
      * @param Land[] $lands
-     * @return bool
      */
     public function hasAtLastOne(iterable $lands): bool
     {

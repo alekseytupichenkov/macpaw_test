@@ -58,7 +58,6 @@ class RestControllerTest extends WebTestCase
         $this->assertEquals('{"id":1,"model":"Aeroprakt A-24","title":"AeropraktA24_1","hangar":null,"status":"fly"}', $this->client->getResponse()->getContent());
     }
 
-
     public function testAirplaneLand()
     {
         $this->client->request('POST', '/api/airplane/1/land', ['hangar_id' => 1]);
